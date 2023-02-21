@@ -61,3 +61,37 @@ console.log(luxury_car);
 // walking up the prototype chain - props and methods are not copied
 console.log(luxury_car.valueOf());
 
+// Get the keys of an object
+console.log(Object.keys(luxury_car)); // returns an array
+
+// loop through each object key
+Object.keys(luxury_car).forEach(key => {
+  console.log(key); // returns plain object key
+})
+
+// loop through and get all inherited props
+for (let key in luxury_car) {
+  console.log(key);
+}
+
+// object constructors
+function Animal(specis) {
+  this.specis = specis;
+  this.eats = true;
+}
+
+Animal.prototype.walks = function () {
+  return `A ${this.specis} is walking!`;  
+}
+
+const Bear = new Animal("bear");
+
+console.log(Bear.specis);
+console.log(Bear.walks());
+
+// The prototype property is where inheritable peops and methods reside.
+console.log(Bear.__proto__);
+console.log(Animal.prototype);
+console.log(Bear.__proto__ === Animal.prototype);
+console.log(Bear);
+
