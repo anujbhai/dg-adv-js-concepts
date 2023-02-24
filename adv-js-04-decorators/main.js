@@ -44,6 +44,7 @@ const count_params = (fn) => {
 };
 
 const require_integers = (fn) => {
+
   return (...params) => {
     params.forEach(param => {
       if (!Number.isInteger(param)) {
